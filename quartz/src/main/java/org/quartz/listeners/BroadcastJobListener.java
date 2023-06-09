@@ -37,7 +37,7 @@ import org.quartz.JobListener;
  * @see #removeListener(org.quartz.JobListener)
  * @see #removeListener(String)
  *
- * @author James House (jhouse AT revolition DOT net)
+ * @author James House (jhouse AT revolution DOT net)
  */
 public class BroadcastJobListener implements JobListener {
 

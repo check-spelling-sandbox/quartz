@@ -22,7 +22,7 @@ import org.quartz.TriggerKey;
  * @see #addListener(org.quartz.SchedulerListener)
  * @see #removeListener(org.quartz.SchedulerListener)
  *
- * @author James House (jhouse AT revolition DOT net)
+ * @author James House (jhouse AT revolution DOT net)
  */
 public class BroadcastSchedulerListener implements SchedulerListener {
 

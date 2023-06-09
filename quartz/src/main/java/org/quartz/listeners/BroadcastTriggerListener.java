@@ -37,7 +37,7 @@ import org.quartz.Trigger.CompletedExecutionInstruction;
  * @see #removeListener(org.quartz.TriggerListener)
  * @see #removeListener(String)
  *
- * @author James House (jhouse AT revolition DOT net)
+ * @author James House (jhouse AT revolution DOT net)
  */
 public class BroadcastTriggerListener implements TriggerListener {
 

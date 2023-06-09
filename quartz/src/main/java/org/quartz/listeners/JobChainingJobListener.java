@@ -39,7 +39,7 @@ import org.quartz.SchedulerException;
  * handling of the error, consider scheduling the triggering of the flow-up
  * job within your job itself.</p>
  *
- * @author James House (jhouse AT revolition DOT net)
+ * @author James House (jhouse AT revolution DOT net)
  */
 public class JobChainingJobListener extends JobListenerSupport {
 
