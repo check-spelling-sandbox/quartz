@@ -138,7 +138,7 @@ public class DailyTimeIntervalTriggerImpl extends AbstractTrigger<DailyTimeInter
     /**
      * <p>
      * Create a <code>DailyTimeIntervalTrigger</code> that will occur immediately, and
-     * repeat at the the given interval.
+     * repeat at the given interval.
      * </p>
      * 
      * @param startTimeOfDay 
@@ -156,7 +156,7 @@ public class DailyTimeIntervalTriggerImpl extends AbstractTrigger<DailyTimeInter
     /**
      * <p>
      * Create a <code>DailyTimeIntervalTrigger</code> that will occur immediately, and
-     * repeat at the the given interval.
+     * repeat at the given interval.
      * </p>
      * 
      * @param startTimeOfDay 
@@ -175,7 +175,7 @@ public class DailyTimeIntervalTriggerImpl extends AbstractTrigger<DailyTimeInter
     /**
      * <p>
      * Create a <code>DailyTimeIntervalTrigger</code> that will occur at the given time,
-     * and repeat at the the given interval until the given end time.
+     * and repeat at the given interval until the given end time.
      * </p>
      * 
      * @param startTime
@@ -203,7 +203,7 @@ public class DailyTimeIntervalTriggerImpl extends AbstractTrigger<DailyTimeInter
     /**
      * <p>
      * Create a <code>DailyTimeIntervalTrigger</code> that will occur at the given time,
-     * and repeat at the the given interval until the given end time.
+     * and repeat at the given interval until the given end time.
      * </p>
      * 
      * @param startTime
@@ -238,7 +238,7 @@ public class DailyTimeIntervalTriggerImpl extends AbstractTrigger<DailyTimeInter
     /**
      * <p>
      * Create a <code>DailyTimeIntervalTrigger</code> that will occur at the given time,
-     * fire the identified <code>Job</code> and repeat at the the given
+     * fire the identified <code>Job</code> and repeat at the given
      * interval until the given end time.
      * </p>
      * 
@@ -381,7 +381,7 @@ public class DailyTimeIntervalTriggerImpl extends AbstractTrigger<DailyTimeInter
 
     /**
      * <p>
-     * set the the time interval that will be added to the <code>DailyTimeIntervalTrigger</code>'s
+     * set the time interval that will be added to the <code>DailyTimeIntervalTrigger</code>'s
      * fire time (in the set repeat interval unit) in order to calculate the time of the 
      * next trigger repeat.
      * </p>
@@ -676,7 +676,7 @@ public class DailyTimeIntervalTriggerImpl extends AbstractTrigger<DailyTimeInter
         if (endTimeOfDay != null) {
           afterTimePastEndTimeOfDay = afterTime.getTime() > endTimeOfDay.getTimeOfDayForDate(afterTime).getTime();
         }
-        // c. now we need to move move to the next valid day of week if either: 
+        // c. now we need to move to the next valid day of week if either: 
         // the given time is past the end time of day, or given time is not on a valid day of week
         Date fireTime = advanceToNextDayOfWeekIfNecessary(afterTime, afterTimePastEndTimeOfDay);
         if (fireTime == null)

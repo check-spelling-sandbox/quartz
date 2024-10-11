@@ -30,7 +30,7 @@ import java.sql.SQLException;
 
 /**
  * <p>
- * This is a driver delegate for Intersystems Caché database.
+ * This is a driver delegate for InterSystems Caché database.
  * </p>
  * 
  * <p>

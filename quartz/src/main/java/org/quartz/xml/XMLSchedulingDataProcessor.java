@@ -705,7 +705,7 @@ public class XMLSchedulingDataProcessor implements ErrorHandler {
                         // do nothing.... (smart policy is default)
                     }
                     else
-                        throw new ParseException("Unexpected/Unhandlable Misfire Instruction encountered '" + triggerMisfireInstructionConst + "', for trigger: " + triggerKey, -1);
+                        throw new ParseException("Unexpected/Unhandleable Misfire Instruction encountered '" + triggerMisfireInstructionConst + "', for trigger: " + triggerKey, -1);
                 }
             } else if (triggerNode.getNodeName().equals("cron")) {
                 String cronExpression = getTrimmedToNullString(xpath, "q:cron-expression", triggerNode);
@@ -725,7 +725,7 @@ public class XMLSchedulingDataProcessor implements ErrorHandler {
                         // do nothing.... (smart policy is default)
                     }
                     else
-                        throw new ParseException("Unexpected/Unhandlable Misfire Instruction encountered '" + triggerMisfireInstructionConst + "', for trigger: " + triggerKey, -1);
+                        throw new ParseException("Unexpected/Unhandleable Misfire Instruction encountered '" + triggerMisfireInstructionConst + "', for trigger: " + triggerKey, -1);
                 }
             } else if (triggerNode.getNodeName().equals("calendar-interval")) {
                 String repeatIntervalString = getTrimmedToNullString(xpath, "q:repeat-interval", triggerNode);
@@ -747,7 +747,7 @@ public class XMLSchedulingDataProcessor implements ErrorHandler {
                         // do nothing.... (smart policy is default)
                     }
                     else
-                        throw new ParseException("Unexpected/Unhandlable Misfire Instruction encountered '" + triggerMisfireInstructionConst + "', for trigger: " + triggerKey, -1);
+                        throw new ParseException("Unexpected/Unhandleable Misfire Instruction encountered '" + triggerMisfireInstructionConst + "', for trigger: " + triggerKey, -1);
                 }
             } else {
                 throw new ParseException("Unknown trigger type: " + triggerNode.getNodeName(), -1);
@@ -1211,7 +1211,7 @@ public class XMLSchedulingDataProcessor implements ErrorHandler {
     }
 
     /**
-     * Resets the the number of detected validation exceptions.
+     * Resets the number of detected validation exceptions.
      */
     protected void clearValidationExceptions() {
         validationExceptions.clear();

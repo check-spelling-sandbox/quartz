@@ -39,7 +39,7 @@ public class HelloJob implements Job {
 
     /**
      * <p>
-     * Empty constructor for job initilization
+     * Empty constructor for job initialization
      * </p>
      * <p>
      * Quartz requires a public empty constructor so that the scheduler can

@@ -76,7 +76,7 @@ public class QuartzSchedulerThread extends Thread {
 
     private long idleWaitTime = DEFAULT_IDLE_WAIT_TIME;
 
-    private int idleWaitVariablness = 7 * 1000;
+    private int idleWaitVariableness = 7 * 1000;
 
     private final Logger log = LoggerFactory.getLogger(getClass());
 
@@ -135,11 +135,11 @@ public class QuartzSchedulerThread extends Thread {
 
     void setIdleWaitTime(long waitTime) {
         idleWaitTime = waitTime;
-        idleWaitVariablness = (int) (waitTime * 0.2);
+        idleWaitVariableness = (int) (waitTime * 0.2);
     }
 
     private long getRandomizedIdleWaitTime() {
-        return idleWaitTime - random.nextInt(idleWaitVariablness);
+        return idleWaitTime - random.nextInt(idleWaitVariableness);
     }
 
     /**
@@ -202,7 +202,7 @@ public class QuartzSchedulerThread extends Thread {
     /**
      * <p>
      * Signals the main processing loop that a change in scheduling has been
-     * made - in order to interrupt any sleeping that may be occuring while
+     * made - in order to interrupt any sleeping that may be occurring while
      * waiting for the fire time to arrive.
      * </p>
      *
@@ -354,7 +354,7 @@ public class QuartzSchedulerThread extends Thread {
                             continue;
 
                         // set triggers to 'executing'
-                        List<TriggerFiredResult> bndles = new ArrayList<TriggerFiredResult>();
+                        List<TriggerFiredResult> bundles = new ArrayList<TriggerFiredResult>();
 
                         boolean goAhead = true;
                         synchronized(sigLock) {
@@ -364,7 +364,7 @@ public class QuartzSchedulerThread extends Thread {
                             try {
                                 List<TriggerFiredResult> res = qsRsrcs.getJobStore().triggersFired(triggers);
                                 if(res != null)
-                                    bndles = res;
+                                    bundles = res;
                             } catch (SchedulerException se) {
                                 qs.notifySchedulerListenersError(
                                         "An error occurred while firing triggers '"
@@ -379,9 +379,9 @@ public class QuartzSchedulerThread extends Thread {
 
                         }
 
-                        for (int i = 0; i < bndles.size(); i++) {
-                            TriggerFiredResult result =  bndles.get(i);
-                            TriggerFiredBundle bndle =  result.getTriggerFiredBundle();
+                        for (int i = 0; i < bundles.size(); i++) {
+                            TriggerFiredResult result =  bundles.get(i);
+                            TriggerFiredBundle bundle =  result.getTriggerFiredBundle();
                             Exception exception = result.getException();
 
                             if (exception instanceof RuntimeException) {
@@ -393,17 +393,17 @@ public class QuartzSchedulerThread extends Thread {
                             // it's possible to get 'null' if the triggers was paused,
                             // blocked, or other similar occurrences that prevent it being
                             // fired at this time...  or if the scheduler was shutdown (halted)
-                            if (bndle == null) {
+                            if (bundle == null) {
                                 qsRsrcs.getJobStore().releaseAcquiredTrigger(triggers.get(i));
                                 continue;
                             }
 
                             JobRunShell shell = null;
                             try {
-                                shell = qsRsrcs.getJobRunShellFactory().createJobRunShell(bndle);
+                                shell = qsRsrcs.getJobRunShellFactory().createJobRunShell(bundle);
                                 shell.initialize(qs);
                             } catch (SchedulerException se) {
-                                qsRsrcs.getJobStore().triggeredJobComplete(triggers.get(i), bndle.getJobDetail(), CompletedExecutionInstruction.SET_ALL_JOB_TRIGGERS_ERROR);
+                                qsRsrcs.getJobStore().triggeredJobComplete(triggers.get(i), bundle.getJobDetail(), CompletedExecutionInstruction.SET_ALL_JOB_TRIGGERS_ERROR);
                                 continue;
                             }
 
@@ -413,7 +413,7 @@ public class QuartzSchedulerThread extends Thread {
                                 // a thread pool being used concurrently - which the docs
                                 // say not to do...
                                 getLog().error("ThreadPool.runInThread() return false!");
-                                qsRsrcs.getJobStore().triggeredJobComplete(triggers.get(i), bndle.getJobDetail(), CompletedExecutionInstruction.SET_ALL_JOB_TRIGGERS_ERROR);
+                                qsRsrcs.getJobStore().triggeredJobComplete(triggers.get(i), bundle.getJobDetail(), CompletedExecutionInstruction.SET_ALL_JOB_TRIGGERS_ERROR);
                             }
 
                         }

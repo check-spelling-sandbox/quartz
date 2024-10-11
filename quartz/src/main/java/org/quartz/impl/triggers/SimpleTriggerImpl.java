@@ -138,7 +138,7 @@ public class SimpleTriggerImpl extends AbstractTrigger<SimpleTrigger> implements
     /**
      * <p>
      * Create a <code>SimpleTrigger</code> that will occur immediately, and
-     * repeat at the the given interval the given number of times.
+     * repeat at the given interval the given number of times.
      * </p>
      * 
      * @deprecated use a TriggerBuilder instead
@@ -151,7 +151,7 @@ public class SimpleTriggerImpl extends AbstractTrigger<SimpleTrigger> implements
     /**
      * <p>
      * Create a <code>SimpleTrigger</code> that will occur immediately, and
-     * repeat at the the given interval the given number of times.
+     * repeat at the given interval the given number of times.
      * </p>
      * 
      * @deprecated use a TriggerBuilder instead
@@ -191,7 +191,7 @@ public class SimpleTriggerImpl extends AbstractTrigger<SimpleTrigger> implements
     /**
      * <p>
      * Create a <code>SimpleTrigger</code> that will occur at the given time,
-     * and repeat at the the given interval the given number of times, or until
+     * and repeat at the given interval the given number of times, or until
      * the given end time.
      * </p>
      * 
@@ -218,7 +218,7 @@ public class SimpleTriggerImpl extends AbstractTrigger<SimpleTrigger> implements
     /**
      * <p>
      * Create a <code>SimpleTrigger</code> that will occur at the given time,
-     * and repeat at the the given interval the given number of times, or until
+     * and repeat at the given interval the given number of times, or until
      * the given end time.
      * </p>
      * 
@@ -250,7 +250,7 @@ public class SimpleTriggerImpl extends AbstractTrigger<SimpleTrigger> implements
     /**
      * <p>
      * Create a <code>SimpleTrigger</code> that will occur at the given time,
-     * fire the identified <code>Job</code> and repeat at the the given
+     * fire the identified <code>Job</code> and repeat at the given
      * interval the given number of times, or until the given end time.
      * </p>
      * 
@@ -262,7 +262,7 @@ public class SimpleTriggerImpl extends AbstractTrigger<SimpleTrigger> implements
      *          to quit repeat firing.
      * @param repeatCount
      *          The number of times for the <code>Trigger</code> to repeat
-     *          firing, use {@link #REPEAT_INDEFINITELY}for unlimitted times.
+     *          firing, use {@link #REPEAT_INDEFINITELY}for unlimited times.
      * @param repeatInterval
      *          The number of milliseconds to pause between the repeat firing.
      * 
@@ -324,7 +324,7 @@ public class SimpleTriggerImpl extends AbstractTrigger<SimpleTrigger> implements
     /**
      * <p>
      * Get the time at which the <code>SimpleTrigger</code> should quit
-     * repeating - even if repeastCount isn't yet satisfied.
+     * repeating - even if repeatCount isn't yet satisfied.
      * </p>
      * 
      * @see #getFinalFireTime()
@@ -363,7 +363,7 @@ public class SimpleTriggerImpl extends AbstractTrigger<SimpleTrigger> implements
 
     /**
      * <p>
-     * Set the the number of time the <code>SimpleTrigger</code> should
+     * Set the number of time the <code>SimpleTrigger</code> should
      * repeat, after which it will be automatically deleted.
      * </p>
      * 
@@ -390,7 +390,7 @@ public class SimpleTriggerImpl extends AbstractTrigger<SimpleTrigger> implements
 
     /**
      * <p>
-     * Set the the time interval (in milliseconds) at which the <code>SimpleTrigger</code>
+     * Set the time interval (in milliseconds) at which the <code>SimpleTrigger</code>
      * should repeat.
      * </p>
      * 

@@ -151,7 +151,7 @@ public class NativeJob implements Job {
 
         
         try {
-            //with this variable will be done the swithcing
+            //with this variable will be done the switching
             String osName = System.getProperty("os.name");
 
             // specific for Windows

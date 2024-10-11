@@ -308,7 +308,7 @@ public class QuartzSchedulerResources {
             rmiCreateRegistryStrategy = CREATE_REGISTRY_NEVER;
         } else {
             throw new IllegalArgumentException(
-                    "Faild to set RMICreateRegistryStrategy - strategy unknown: '"
+                    "Failed to set RMICreateRegistryStrategy - strategy unknown: '"
                             + rmiCreateRegistryStrategy + "'");
         }
 
@@ -457,7 +457,7 @@ public class QuartzSchedulerResources {
 
     /**
      * Get the name under which to bind the QuartzScheduler in RMI.  Will 
-     * return the value of the uniqueIdentifier property if explict RMI bind 
+     * return the value of the uniqueIdentifier property if explicit RMI bind 
      * name was never set.
      * 
      * @see #getUniqueIdentifier()

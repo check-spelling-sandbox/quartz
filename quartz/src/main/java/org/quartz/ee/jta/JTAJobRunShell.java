@@ -65,8 +65,8 @@ public class JTAJobRunShell extends JobRunShell {
      * Create a JTAJobRunShell instance with the given settings.
      * </p>
      */
-    public JTAJobRunShell(Scheduler scheduler, TriggerFiredBundle bndle) {
-        super(scheduler, bndle);
+    public JTAJobRunShell(Scheduler scheduler, TriggerFiredBundle bundle) {
+        super(scheduler, bundle);
         this.transactionTimeout = null;
     }
 
@@ -75,8 +75,8 @@ public class JTAJobRunShell extends JobRunShell {
      * Create a JTAJobRunShell instance with the given settings.
      * </p>
      */
-    public JTAJobRunShell(Scheduler scheduler, TriggerFiredBundle bndle, int timeout) {
-        super(scheduler, bndle);
+    public JTAJobRunShell(Scheduler scheduler, TriggerFiredBundle bundle, int timeout) {
+        super(scheduler, bundle);
         this.transactionTimeout = timeout;
     }
     
